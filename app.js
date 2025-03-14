@@ -12,4 +12,7 @@ app.set("view engine", "ejs");
 
 app.use("/", routerMessage);
 
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

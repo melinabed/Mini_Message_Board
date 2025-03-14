@@ -8,15 +8,17 @@
   </head>
   <body>
     <h1>Mini Message Board</h1>
-    <ul>
+    <%- include('form') %>
+    <ul class="message-container">
       <% messages.map((message) => { %>
       <li>
-        <h2><%= message.user %></h2>
-        <p><%= message.text %></p>
-        <p><%= message.added %></p>
+        <div>
+          <h3><%= message.user %></h3>
+          <p class="message"><%= message.text %></p>
+        </div>
+        <p class="date"><%= message.added %></p>
       </li>
       <% }) %>
     </ul>
-    <%- include('form') %>
   </body>
 </html>

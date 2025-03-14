@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "date-fns": "^4.1.0",
     "ejs": "^3.1.10",
     "express": "^4.21.2"
   },
   "name": "mini_message_board",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node app",
     "dev": "node --watch app"
