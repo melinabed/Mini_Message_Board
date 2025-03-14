@@ -1,10 +1,23 @@
 const { Router } = require("express");
+const { formatDistanceToNow } = require("date-fns");
 
 const router = Router();
 
+function timeAgo(date) {
+  return formatDistanceToNow(new Date(date), { addSuffix: true });
+}
+
 const messages = [
-  { text: "Hi there", user: "Amando", added: new Date() },
-  { text: "Hi World", user: "Charles", added: new Date() },
+  {
+    text: "Hi there",
+    user: "Amando",
+    added: timeAgo(new Date() - 1000),
+  },
+  {
+    text: "Hi World",
+    user: "Charles",
+    added: timeAgo(new Date() - 1000 * 60 * 4),
+  },
 ];
 
 // Gets default address with sample messages
@@ -24,7 +37,11 @@ router.post("/new", (req, res) => {
 
   console.log(req.body);
 
-  messages.push({ text: messageText, user: username, added: new Date() });
+  messages.push({
+    text: messageText,
+    user: username,
+    added: timeAgo(new Date()),
+  });
   res.redirect("/");
 });
 
