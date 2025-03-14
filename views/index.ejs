@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Mini Message Board</h1>
+    <ul>
+      <% messages.map((message) => { %>
+      <li>
+        <h2><%= message.user %></h2>
+        <p><%= message.text %></p>
+        <p><%= message.added %></p>
+      </li>
+      <% }) %>
+    </ul>
+    <%- include('form') %>
+  </body>
+</html>
