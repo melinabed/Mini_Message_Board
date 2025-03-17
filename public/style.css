@@ -1,3 +1,24 @@
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 60px;
+  }
+
+  .message-container {
+    width: 100%;
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -45,7 +66,7 @@ button[type="submit"]:hover {
 
 .message-container {
   list-style-type: none;
-  min-width: 750px;
+  width: 100%;
   display: flex;
   flex-direction: column-reverse;
   margin-top: 40px;
