@@ -12,6 +12,7 @@
 
   h1 {
     margin-top: 60px;
+    text-align: center;
   }
 
   .message-container {
@@ -36,7 +37,6 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #f6f8fa;
-  padding: 40px;
 }
 
 h1 {
