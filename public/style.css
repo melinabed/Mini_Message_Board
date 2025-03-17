@@ -48,7 +48,7 @@ button[type="submit"]:hover {
   min-width: 750px;
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 20px;
 }
 
