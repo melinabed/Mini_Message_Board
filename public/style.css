@@ -49,6 +49,7 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: column-reverse;
   margin-top: 20px;
+  padding: 20px;
 }
 
 h3 {
