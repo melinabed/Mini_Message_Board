@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app",
-    "dev": "node --watch app"
+    "dev": "node --watch --env-file=.env app"
   },
   "keywords": [],
   "author": "",
