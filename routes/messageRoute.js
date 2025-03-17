@@ -41,6 +41,10 @@ router.post("/new", (req, res) => {
   const messageText = req.body.messageText;
   const username = req.body.username;
 
+  if (!messageText || !username) {
+    return res.status(400).send("Username and message text are required.");
+  }
+
   // Add the new message with the current relative time
   messages.push({
     text: messageText,

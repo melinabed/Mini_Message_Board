@@ -5,12 +5,14 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  background-color: rgb(240, 240, 240);
+  background-color: #f6f8fa;
 }
 
 h1 {
   color: green;
 }
+
+/*Form Input Styles */
 
 input[type="text"] {
   padding: 10px;
@@ -23,9 +25,9 @@ input[type="text"]:focus {
   outline: 2px solid green;
 }
 
-button {
+button[type="submit"] {
   padding: 10px;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   border-radius: 5px;
   border: 1.5px solid white;
   background-color: white;
@@ -33,11 +35,13 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button[type="submit"]:hover {
   border: 1.5px solid green;
   background-color: green;
   color: white;
 }
+
+/*Message Container Styles */
 
 .message-container {
   list-style-type: none;
@@ -56,10 +60,11 @@ h3 {
 li {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   margin-bottom: 10px;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .message {
@@ -67,5 +72,32 @@ li {
 }
 
 .date {
+  color: gray;
+}
+
+#theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/** Error Container Styles */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container h1 {
+  color: gray;
+  font-size: 3rem;
+}
+
+.error-container h2 {
   color: gray;
 }
