@@ -102,3 +102,13 @@ li {
 .error-container h2 {
   color: gray;
 }
+
+/* Theme Mode Styles */
+.dark-mode-message-item {
+  background-color: #4b545d;
+  color: #e1e1e1;
+}
+
+.light-mode-message-item {
+  background-color: white;
+}
