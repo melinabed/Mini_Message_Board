@@ -17,6 +17,15 @@
   .message-container {
     width: 100%;
   }
+
+  button[type="submit"] {
+    background-color: green;
+  }
+
+  button[type="submit"]:active {
+    background-color: white;
+    color: green;
+  }
 }
 
 body {
