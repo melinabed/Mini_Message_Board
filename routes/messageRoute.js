@@ -1,5 +1,7 @@
 const { Router } = require("express");
 const { formatDistanceToNow } = require("date-fns");
+const fs = require("fs");
+const path = require("path");
 
 const router = Router();
 
@@ -22,6 +24,26 @@ const messages = [
   },
 ];
 
+// File path to store messages
+const messagesFilePath = path.join(__dirname, "messages.json");
+
+// Save messages to a file
+function saveMessages() {
+  fs.writeFileSync(messagesFilePath, JSON.stringify(messages, null, 2));
+}
+
+// Load messages from a file
+function loadMessages() {
+  if (fs.existsSync(messagesFilePath)) {
+    const storedMessages = fs.readFileSync(messagesFilePath);
+    messages.length = 0;
+    messages.push(...JSON.parse(storedMessages));
+  }
+}
+
+// Load messages when the server starts
+loadMessages();
+
 // Gets default address with sample messages
 router.get("/", (req, res) => {
   const updatedMessages = messages.map((message) => ({
@@ -36,7 +58,7 @@ router.get("/new", (req, res) => {
   res.render("form");
 });
 
-// Add a new message
+// Save messages whenever a new message is added
 router.post("/new", (req, res) => {
   const messageText = req.body.messageText;
   const username = req.body.username;
@@ -51,6 +73,10 @@ router.post("/new", (req, res) => {
     user: username,
     added: new Date(),
   });
+
+  // Save messages to a file
+  saveMessages();
+
   res.redirect("/");
 });
 
